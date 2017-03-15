@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C25EF71E7942D00052B637 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C25EF61E7942D00052B637 /* ViewController.swift */; };
 		F4D2AD721D630E0600EA4892 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4D2AD701D630E0600EA4892 /* FoodPin.xcdatamodeld */; };
 		F4D336C21D2E4309003010DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D336C11D2E4309003010DD /* AppDelegate.swift */; };
 		F4D336C71D2E4309003010DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D336C51D2E4309003010DD /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04C25EF61E7942D00052B637 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F4D2AD711D630E0600EA4892 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		F4D336BE1D2E4309003010DD /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D336C11D2E4309003010DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				F4D336C11D2E4309003010DD /* AppDelegate.swift */,
 				F4D336C51D2E4309003010DD /* Main.storyboard */,
+				04C25EF61E7942D00052B637 /* ViewController.swift */,
 				F4D336C81D2E4309003010DD /* Assets.xcassets */,
 				F4D336CA1D2E4309003010DD /* LaunchScreen.storyboard */,
 				F4D336CD1D2E4309003010DD /* Info.plist */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C25EF71E7942D00052B637 /* ViewController.swift in Sources */,
 				F4D2AD721D630E0600EA4892 /* FoodPin.xcdatamodeld in Sources */,
 				F4D336C21D2E4309003010DD /* AppDelegate.swift in Sources */,
 			);
