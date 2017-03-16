@@ -10,6 +10,8 @@
 		04C25EF91E795D540052B637 /* BooksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C25EF81E795D540052B637 /* BooksCell.swift */; };
 		04C25EFB1E795FB50052B637 /* EditBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C25EFA1E795FB50052B637 /* EditBookViewController.swift */; };
 		04C25EFD1E7962E20052B637 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C25EFC1E7962E20052B637 /* BooksViewController.swift */; };
+		04E65CEA1E7AE6A600D3F6FA /* EditAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E65CE91E7AE6A600D3F6FA /* EditAuthorViewController.swift */; };
+		04E65CEC1E7AEC2700D3F6FA /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E65CEB1E7AEC2700D3F6FA /* AuthorsViewController.swift */; };
 		F4D2AD721D630E0600EA4892 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4D2AD701D630E0600EA4892 /* FoodPin.xcdatamodeld */; };
 		F4D336C21D2E4309003010DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D336C11D2E4309003010DD /* AppDelegate.swift */; };
 		F4D336C71D2E4309003010DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D336C51D2E4309003010DD /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 		04C25EF81E795D540052B637 /* BooksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksCell.swift; sourceTree = "<group>"; };
 		04C25EFA1E795FB50052B637 /* EditBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBookViewController.swift; sourceTree = "<group>"; };
 		04C25EFC1E7962E20052B637 /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		04E65CE91E7AE6A600D3F6FA /* EditAuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAuthorViewController.swift; sourceTree = "<group>"; };
+		04E65CEB1E7AEC2700D3F6FA /* AuthorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
 		F4D2AD711D630E0600EA4892 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		F4D336BE1D2E4309003010DD /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D336C11D2E4309003010DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 			children = (
 				F4D336C11D2E4309003010DD /* AppDelegate.swift */,
 				F4D336C51D2E4309003010DD /* Main.storyboard */,
+				04E65CEB1E7AEC2700D3F6FA /* AuthorsViewController.swift */,
+				04E65CE91E7AE6A600D3F6FA /* EditAuthorViewController.swift */,
 				04C25EFC1E7962E20052B637 /* BooksViewController.swift */,
 				04C25EFA1E795FB50052B637 /* EditBookViewController.swift */,
 				04C25EF81E795D540052B637 /* BooksCell.swift */,
@@ -151,8 +157,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C25EF91E795D540052B637 /* BooksCell.swift in Sources */,
+				04E65CEC1E7AEC2700D3F6FA /* AuthorsViewController.swift in Sources */,
 				F4D2AD721D630E0600EA4892 /* FoodPin.xcdatamodeld in Sources */,
 				F4D336C21D2E4309003010DD /* AppDelegate.swift in Sources */,
+				04E65CEA1E7AE6A600D3F6FA /* EditAuthorViewController.swift in Sources */,
 				04C25EFB1E795FB50052B637 /* EditBookViewController.swift in Sources */,
 				04C25EFD1E7962E20052B637 /* BooksViewController.swift in Sources */,
 			);
