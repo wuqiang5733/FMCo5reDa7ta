@@ -38,7 +38,7 @@ class EditBookViewController: UIViewController {
             } catch {
                 print("Error")
             }
-            navigationController?.popViewController(animated: true)
+             navigationController?.popViewController(animated: true)
         }
     }
 }
