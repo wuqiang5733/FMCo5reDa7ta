@@ -113,6 +113,7 @@ class BooksViewController: UITableViewController {
         tableView.reloadData()
     }
     */
+    /*
    // Listing 22-17: Sorting the books by title
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -127,6 +128,23 @@ class BooksViewController: UITableViewController {
         }
         tableView.reloadData()
     }
+    */
+    // Listing 22-18: Sorting books by author and year
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let request: NSFetchRequest<Books> = Books.fetchRequest()
+        let sort1 = NSSortDescriptor(key: "author.name", ascending: true)
+        let sort2 = NSSortDescriptor(key: "year", ascending: true)
+        request.sortDescriptors = [sort1, sort2]
+        do {
+            listOfBooks = try context.fetch(request)
+        } catch {
+            print("Error")
+        }
+        tableView.reloadData()
+    }
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfBooks.count
