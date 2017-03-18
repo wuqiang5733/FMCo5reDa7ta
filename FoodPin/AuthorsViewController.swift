@@ -36,7 +36,13 @@ class AuthorsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "authorsCell", for: indexPath)
         let author = listOfAuthors[indexPath.row]
-        cell.textLabel?.text = author.name
+        let name = author.name
+        
+        var total = 0
+        if let totalBooks = author.books {
+            total = totalBooks.count
+        }
+        cell.textLabel?.text = "\(name!) (\(total))"
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

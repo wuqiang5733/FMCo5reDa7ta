@@ -16,6 +16,7 @@ class EditBookViewController: UIViewController {
     var context: NSManagedObjectContext!
     var selectedAuthor: Authors!
     
+    /*
     override func viewDidLoad() {
         super.viewDidLoad()
         bookTitle.becomeFirstResponder()
@@ -23,6 +24,22 @@ class EditBookViewController: UIViewController {
         let appDelegate = app.delegate as! AppDelegate
         context = appDelegate.context
     }
+ */
+    // Listing 22-9: Counting the authors available
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        bookTitle.becomeFirstResponder()
+        let app = UIApplication.shared
+        let appDelegate = app.delegate as! AppDelegate
+        context = appDelegate.context
+        
+        let request: NSFetchRequest<Authors> = Authors.fetchRequest()
+        if let total = try? context.count(for: request) {
+            print(total)
+        }
+    }
+    
     @IBAction func saveBook(_ sender: UIBarButtonItem) {
         let year = Int32(bookYear.text!)
         let title = bookTitle.text!.trimmingCharacters(in: .whitespaces)
