@@ -193,6 +193,7 @@ class BooksViewController: UITableViewController {
         }
     }
      // Listing 22-20: Deleting a book
+    // Listing 22-20: Deleting a book
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let book = listOfBooks[indexPath.row]
