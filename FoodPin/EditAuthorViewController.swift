@@ -21,6 +21,7 @@ class EditAuthorViewController: UIViewController {
         let appDelegate = app.delegate as! AppDelegate
         context = appDelegate.context
     }
+    /*
     @IBAction func saveAuthor(_ sender: UIBarButtonItem) {
         let name = authorName.text!.trimmingCharacters(in: .whitespaces)
         if name != "" {
@@ -31,6 +32,28 @@ class EditAuthorViewController: UIViewController {
                 performSegue(withIdentifier: "backFromNew", sender: self)
             } catch {
                 print("Error")
+            }
+        }
+    }
+    */
+    // Listing 22-16: Checking for duplicates
+    @IBAction func saveAuthor(_ sender: UIBarButtonItem) {
+        let name = authorName.text!.trimmingCharacters(in: .whitespaces)
+        if name != "" {
+            let request: NSFetchRequest<Authors> = Authors.fetchRequest()
+            request.predicate = NSPredicate(format: "name = %@", name)
+            
+            if let total = try? context.count(for: request) {
+                if total == 0 {
+                    selectedAuthor = Authors(context: context)
+                    selectedAuthor.name = name
+                    do {
+                        try context.save()
+                        performSegue(withIdentifier: "backFromNew", sender: self)
+                    } catch {
+                        print("Error")
+                    }
+                }
             }
         }
     }
