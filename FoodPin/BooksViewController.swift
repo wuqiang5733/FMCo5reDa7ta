@@ -97,6 +97,7 @@ class BooksViewController: UITableViewController {
         tableView.reloadData()
     }
     */
+    /*
     //Listing 22-15: Filtering values with predicate keywords
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -104,6 +105,21 @@ class BooksViewController: UITableViewController {
         let search = "Sec"
         let request: NSFetchRequest<Books> = Books.fetchRequest()
         request.predicate = NSPredicate(format: "author.name BEGINSWITH[c] %@", search)
+        do {
+            listOfBooks = try context.fetch(request)
+        } catch {
+            print("Error")
+        }
+        tableView.reloadData()
+    }
+    */
+   // Listing 22-17: Sorting the books by title
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let request: NSFetchRequest<Books> = Books.fetchRequest()
+        let sort = NSSortDescriptor(key: "title", ascending: true)
+        request.sortDescriptors = [sort]
         do {
             listOfBooks = try context.fetch(request)
         } catch {
