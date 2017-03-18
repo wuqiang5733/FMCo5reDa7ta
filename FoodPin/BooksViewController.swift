@@ -48,6 +48,7 @@ class BooksViewController: UITableViewController {
         tableView.reloadData()
     }
     */
+    /*
     // Listing 22-12: Filtering books by author
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,7 +62,24 @@ class BooksViewController: UITableViewController {
         }
         tableView.reloadData()
     }
+    */
     
+    
+  //  Listing 22-13: Creating filters with placeholders
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let search = "SecondAuthor"
+        let request: NSFetchRequest<Books> = Books.fetchRequest()
+        request.predicate = NSPredicate(format: "author.name = %@", search)
+        do {
+            listOfBooks = try context.fetch(request)
+        } catch {
+            print("Error")
+        }
+        tableView.reloadData()
+    }
+ 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfBooks.count
     }
