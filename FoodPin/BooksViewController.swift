@@ -20,10 +20,25 @@ class BooksViewController: UITableViewController {
         let appDelegate = app.delegate as! AppDelegate
         context = appDelegate.context
     }
+    /*
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         let request: NSFetchRequest<Books> = Books.fetchRequest()
+        do {
+            listOfBooks = try context.fetch(request)
+        } catch {
+            print("Error")
+        }
+        tableView.reloadData()
+    }
+ */
+    // Listing 22-11: Filtering books by year
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let request: NSFetchRequest<Books> = Books.fetchRequest()
+        request.predicate = NSPredicate(format: "year = 2016")
         do {
             listOfBooks = try context.fetch(request)
         } catch {
