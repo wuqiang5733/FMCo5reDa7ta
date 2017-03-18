@@ -129,6 +129,7 @@ class BooksViewController: UITableViewController {
         tableView.reloadData()
     }
     */
+    /*
     // Listing 22-18: Sorting books by author and year
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -144,6 +145,22 @@ class BooksViewController: UITableViewController {
         }
         tableView.reloadData()
     }
+ */
+    // Listing 22-19: Sorting books by title without differentiating between lower- and upper-case letters
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let request: NSFetchRequest<Books> = Books.fetchRequest()
+        let sort = NSSortDescriptor(key: "title", ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
+        request.sortDescriptors = [sort]
+        do {
+            listOfBooks = try context.fetch(request)
+        } catch {
+            print("Error")
+        }
+        tableView.reloadData()
+    }
+    
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
