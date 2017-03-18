@@ -182,4 +182,30 @@ class BooksViewController: UITableViewController {
         }
         return cell
     }
+    
+    // Listing 22-20: Deleting a book
+    // 直接在屏幕上左划出现删除菜单
+    @IBAction func editBooks(_ sender: UIBarButtonItem) {
+        if tableView.isEditing {
+            tableView.setEditing(false, animated: true)
+        } else {
+            tableView.setEditing(true, animated: true)
+        }
+    }
+     // Listing 22-20: Deleting a book
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let book = listOfBooks[indexPath.row]
+            context.delete(book)
+            do {
+                try context.save()
+                listOfBooks.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            } catch {
+                print("Error")
+            }
+        }
+    }
+    
+    
 }
