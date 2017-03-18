@@ -80,6 +80,7 @@ class BooksViewController: UITableViewController {
         tableView.reloadData()
     }
  */
+    /*
    // Listing 22-14: Creating filters with multiple values
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -88,6 +89,21 @@ class BooksViewController: UITableViewController {
         let year = 98
         let request: NSFetchRequest<Books> = Books.fetchRequest()
         request.predicate = NSPredicate(format: "author.name = %@ && year = %d", search, year)
+        do {
+            listOfBooks = try context.fetch(request)
+        } catch {
+            print("Error")
+        }
+        tableView.reloadData()
+    }
+    */
+    //Listing 22-15: Filtering values with predicate keywords
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let search = "Sec"
+        let request: NSFetchRequest<Books> = Books.fetchRequest()
+        request.predicate = NSPredicate(format: "author.name BEGINSWITH[c] %@", search)
         do {
             listOfBooks = try context.fetch(request)
         } catch {
