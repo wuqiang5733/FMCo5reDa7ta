@@ -33,6 +33,7 @@ class BooksViewController: UITableViewController {
         tableView.reloadData()
     }
  */
+    /*
     // Listing 22-11: Filtering books by year
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,6 +47,21 @@ class BooksViewController: UITableViewController {
         }
         tableView.reloadData()
     }
+    */
+    // Listing 22-12: Filtering books by author
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let request: NSFetchRequest<Books> = Books.fetchRequest()
+        request.predicate = NSPredicate(format: "author.name = 'Third'")
+        do {
+            listOfBooks = try context.fetch(request)
+        } catch {
+            print("Error")
+        }
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfBooks.count
     }
